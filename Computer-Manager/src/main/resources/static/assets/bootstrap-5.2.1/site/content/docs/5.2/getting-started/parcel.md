@@ -44,7 +44,7 @@ We've already created the `my-project` folder and initialized npm. Now we'll als
 
 ```sh
 mkdir {src,src/js,src/scss}
-touch src/list.html src/js/main.js src/scss/styles.scss
+touch src/listProduct.html src/js/main.js src/scss/styles.scss
 ```
 
 When you're done, your complete project should look like this:
@@ -98,7 +98,7 @@ With dependencies installed and our project folder ready for us to start coding,
    {
       // ...
       "scripts": {
-        "start": "parcel serve src/list.html --public-url / --dist-dir dist",
+        "start": "parcel serve src/listProduct.html --public-url / --dist-dir dist",
         "test": "echo \"Error: no test specified\" && exit 1"
       },
       // ...

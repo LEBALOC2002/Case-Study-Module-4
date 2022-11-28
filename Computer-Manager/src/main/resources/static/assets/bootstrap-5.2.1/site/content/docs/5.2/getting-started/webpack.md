@@ -50,7 +50,7 @@ We've already created the `my-project` folder and initialized npm. Now we'll als
 
 ```sh
 mkdir {dist,src,src/js,src/scss}
-touch dist/list.html src/js/main.js src/scss/styles.scss webpack.config.js
+touch dist/listProduct.html src/js/main.js src/scss/styles.scss webpack.config.js
 ```
 
 When you're done, your complete project should look like this:

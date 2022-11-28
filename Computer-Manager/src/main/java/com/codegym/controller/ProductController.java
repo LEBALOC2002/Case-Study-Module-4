@@ -28,7 +28,7 @@ public class ProductController {
     @GetMapping("/managerProduct")
     public ModelAndView showListForm() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("product/list");
+        modelAndView.setViewName("/product/listProduct");
         return modelAndView;
     }
 
