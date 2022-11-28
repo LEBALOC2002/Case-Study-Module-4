@@ -54,12 +54,12 @@ public class ProductCreateDTO implements Validator {
         String price = productCreateDTO.getPrice();
         if (price != null && price.length() > 0) {
             if (price.length() > 9){
-                errors.rejectValue("price", "price.max","Giá sản phẩm tối đa là 999.999.999 VNĐ ,vui lòng nhập giá sản phẩm.");
+                errors.rejectValue("price", "price.max","Giá sản phẩm tối đa là 999.999.999 $ ,vui lòng nhập giá sản phẩm.");
                 return;
             }
 
             if (price.length() < 6){
-                errors.rejectValue("price", "price.min","Giá sản phẩm thấp nhất là 100.000 VNĐ, vui lòng nhập giá sản phẩm.");
+                errors.rejectValue("price", "price.min","Giá sản phẩm thấp nhất là 100.000 $, vui lòng nhập giá sản phẩm.");
                 return;
             }
 

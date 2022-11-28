@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <title>LOC HUE</title>
+    <title>COMPUTER MANAGER</title>
     <th:block th:replace="/layoutProduct/head :: head"/>
     <th:block th:replace="/layout/head :: head"/>
 </head>
@@ -30,12 +30,12 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="page-title-box">
-                                        <h4 class="page-title">QUẢN LÝ SẢN PHẨM</h4>
+                                        <h4 class="page-title">MANAGER COMPUTER</h4>
                                         <div class="page-title-right">
                                             <ol class="breadcrumb p-0 m-0">
-                                                <li class="breadcrumb-item"><a href="/products">Trang chủ</a></li>
-                                                <li class="breadcrumb-item"><a href="/products/managerProduct/create">Thêm mới</a></li>
-                                                <li class="breadcrumb-item active">Danh sách</li>
+                                                <li class="breadcrumb-item"><a href="/products">HOME</a></li>
+                                                <li class="breadcrumb-item"><a href="/products/managerProduct/create">ADD NEW PRODUCT</a></li>
+                                                <li class="breadcrumb-item active">List Product</li>
                                             </ol>
                                         </div>
                                         <div class="clearfix"></div>
@@ -57,12 +57,12 @@
                                                 <thead>
                                                 <tr class="bg-info text-white">
                                                     <th class="text-center font-weight-bold">ID</th>
-                                                    <th class="text-center font-weight-bold">ẢNH</th>
-                                                    <th class="text-center font-weight-bold">TÊN</th>
-                                                    <th class="text-center font-weight-bold">GIÁ</th>
-                                                    <th class="text-center font-weight-bold">SỐ LƯỢNG</th>
-                                                    <th class="text-center font-weight-bold">MÔ TẢ</th>
-                                                    <th class="text-center font-weight-bold">THAO TÁC</th>
+                                                    <th class="text-center font-weight-bold">IMAGE</th>
+                                                    <th class="text-center font-weight-bold">TITLE</th>
+                                                    <th class="text-center font-weight-bold">PRICE $</th>
+                                                    <th class="text-center font-weight-bold">QUANTITY</th>
+                                                    <th class="text-center font-weight-bold">DESCRIPTION</th>
+                                                    <th class="text-center font-weight-bold">ACTION</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -85,7 +85,6 @@
         <th:block th:replace="/layoutProduct/script :: script"/>
         <script src="/assets/js/app.js"></script>
         <script src="/assets/js/validate.js"></script>
-
         <script>
             const page = {
                 urls: {
@@ -170,7 +169,7 @@
                     </td>
                     <td>${product.productName}</td>
                     <td class="text-right">
-                            ${new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(product.price)}
+                            ${new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(product.price)}
                     </td>
                     <td class="text-right">${product.quantity}</td>
                     <td>${product.description}</td>
@@ -244,8 +243,8 @@
                     },
                     price: {
                         required: "Vui lòng nhập giá.",
-                        min: "Giá sản phẩm tối thiểu là 100.000 VNĐ.",
-                        max: "Giá sản phẩm tối đa là 999.999.999 VNĐ.",
+                        min: "Giá sản phẩm tối thiểu là 100.000 $.",
+                        max: "Giá sản phẩm tối đa là 999.999.999 $.",
                         number: "Giá sản phẩm phải là số."
                     },
                     quantity: {
@@ -400,13 +399,13 @@
                     let id = $(this).data("id");
                     page.commands.getProductById(id).then(() => {
                         Swal.fire({
-                            title: 'Bạn có chắc chắn muốn xóa?',
-                            text: "🖥🖥🖥🖥🖥",
+                            title: 'Are you sure?',
+                            text: "You won't be able to revert this!",
                             icon: 'warning',
                             showCancelButton: true,
                             confirmButtonColor: '#3085d6',
                             cancelButtonColor: '#d33',
-                            confirmButtonText: 'Đồng ý!'
+                            confirmButtonText: 'Yes, delete it!'
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 page.commands.doDeleteProduct(id)

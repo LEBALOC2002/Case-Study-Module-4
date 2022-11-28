@@ -16,44 +16,48 @@
               <div class="col-md-7">
                 <div class="row">
                   <div class="form-group col-lg-12">
-                    <label for="productName" class="col-form-label">Tên sản phẩm</label>
+                    <label for="productName" class="col-form-label">
+                      Product name</label>
                     <input id="productName" name="productName"
                            type="text"
                            class="form-control"
-                           placeholder="Nhập tên sản phẩm.">
+                           placeholder="Enter product name.">
                   </div>
-
+                  <div class="row">
+                    <div class="form-group col-lg-12">
+                      <label for="description" class="col-form-label">
+                        Product Description</label>
+                      <textarea id="description" name="description"
+                                class="form-control"
+                                rows="6"
+                                placeholder="Enter product name."></textarea>
+                    </div>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="form-group col-lg-6">
-                    <label for="price" class="col-form-label">Giá</label>
+                  <div class="form-group col-lg-12">
+                    <label for="price" class="col-form-label">Price</label>
                     <input id="price" name="price"
                            type="number"
                            min="100000"
                            max="999999999"
                            class="form-control"
-                           placeholder="Nhập giá.">
+                           placeholder="Enter price.">
 
                   </div>
-                  <div class="form-group col-md-6">
-                    <label for="quantity" class="col-form-label">Số lượng</label>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="quantity" class="col-form-label">QUANTITY</label>
                     <input id="quantity" name="quantity"
                            type="number"
                            min="1"
                            max="999999"
                            class="form-control"
-                           placeholder="Nhập số lượng.">
+                           placeholder="Enter quantity.">
                   </div>
                 </div>
-                <div class="row">
-                  <div class="form-group col-lg-12">
-                    <label for="description" class="col-form-label">Mô tả sản phẩm</label>
-                    <textarea id="description" name="description"
-                              class="form-control"
-                              rows="6"
-                              placeholder="Nhập tên sản phẩm."></textarea>
-                  </div>
-                </div>
+
               </div>
               <div class="col-md-5">
                 <section>
@@ -66,17 +70,17 @@
                         <i class="ion ion-md-cloud-upload"></i>
                       </div>
                       <div class="text">
-                        Chưa có tệp nào được chọn!
+                        No files have been selected yet!
                       </div>
                       <div class="text">
-                        Dung lượng tối đa = 2MB
+                        Maximum size = 2MB
                       </div>
                     </div>
                     <div class="clear-image-preview">
                       <i class="fas fa-times"></i>
                     </div>
                     <div class="file-name">
-                      Sửa ảnh
+                      CHANGER AVATAR
                     </div>
                   </div>
                   <input type="file" id="imageFileUp" accept="image/jpeg, image/png" hidden="">
@@ -87,8 +91,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
-          <button id="btnUpdate" type="button" class="btn btn-info">
-            <i class="ion ion-md-checkmark"></i> Cập nhật
+          <button id="btnUpdate" type="button" class="btn btn-hover-light">
+           Update Product
           </button>
         </div>
       </div>

@@ -24,7 +24,8 @@
 }
 
 .wrappers .clear-image-preview i:hover{
-    color: #e74c3c;
+    color: #fff;
+    background-color: #3f4b5a;
 }
 
 .clear-image-preview i{

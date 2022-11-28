@@ -51,12 +51,12 @@ public class ProductUpdateDTO implements Validator {
         String price = productUpdateDTO.getPrice();
         if (price != null && price.length() > 0) {
             if (price.length() > 9){
-                errors.rejectValue("price", "price.max","Giá sản phẩm tối đa là 999.999.999 VNĐ");
+                errors.rejectValue("price", "price.max","Giá sản phẩm tối đa là 999.999.999 $");
                 return;
             }
 
             if (price.length() < 6){
-                errors.rejectValue("price", "price.min","Giá sản phẩm thấp nhất là 100.000 VNĐ");
+                errors.rejectValue("price", "price.min","Giá sản phẩm thấp nhất là 100.000 $");
                 return;
             }
 

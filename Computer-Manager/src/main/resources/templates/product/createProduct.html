@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <title>LOC HUE</title>
+    <title>COMPUTER MANAGER</title>
     <th:block th:replace="/layoutProduct/head :: head"/>
     <th:block th:replace="/layout/head :: head"/>
 </head>
@@ -31,12 +31,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">QUẢN LÝ SẢN PHẨM</h4>
+                                    <h4 class="page-title">
+                                        PRODUCT MANAGEMENT</h4>
                                     <div class="page-title-right">
                                         <ol class="breadcrumb p-0 m-0">
-                                            <li class="breadcrumb-item"><a href="/products">Trang chủ</a></li>
-                                            <li class="breadcrumb-item"><a href="/products/managerProduct">Danh sách</a></li>
-                                            <li class="breadcrumb-item active">Thêm mới</li>
+                                            <li class="breadcrumb-item"><a href="/products">HOME</a></li>
+                                            <li class="breadcrumb-item"><a href="/products/managerProduct">LIST PRODUCT</a></li>
+                                            <li class="breadcrumb-item active">NEW ADD PRODUCT</li>
                                         </ol>
                                     </div>
                                     <div class="clearfix"></div>
@@ -53,46 +54,47 @@
                                     <div class="col-lg-7">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h4 class="header-title mb-4">Thêm mới sản phẩm</h4>
+                                                <h4 class="header-title mb-4" style="color:#1b1e21;">NEW PRODUCT ADD</h4>
                                                 <div class="frm-alert-danger hide"></div>
                                                 <div class="row">
                                                     <div class="form-group col-lg-12">
-                                                        <label for="productName" class="col-form-label">Tên sản phẩm</label>
+                                                        <label for="productName" class="col-form-label">Product Name</label>
                                                         <input id="productName" name="productName"
                                                                type="text"
                                                                class="form-control"
-                                                               placeholder="Nhập tên sản phẩm.">
+                                                               placeholder="Enter product name.">
                                                     </div>
-
                                                 </div>
                                                 <div class="row">
-                                                    <div class="form-group col-lg-6">
-                                                        <label for="price" class="col-form-label">Giá</label>
+                                                    <div class="form-group col-lg-12">
+                                                        <label for="description" class="col-form-label">Description</label>
+                                                        <textarea id="description" name="description"
+                                                                  class="form-control"
+                                                                  rows="4"
+                                                                  placeholder="Enter Description."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-lg-12">
+                                                        <label for="price" class="col-form-label">Price</label>
                                                         <input id="price" name="price"
                                                                type="number"
                                                                min="100000"
                                                                max="999999999"
                                                                class="form-control"
-                                                               placeholder="Nhập giá.">
+                                                               placeholder="End price.">
 
                                                     </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="quantity" class="col-form-label">Số lượng</label>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-md-12">
+                                                        <label for="quantity" class="col-form-label">Quantity</label>
                                                         <input id="quantity" name="quantity"
                                                                type="number"
                                                                min="1"
                                                                max="999999"
                                                                class="form-control"
-                                                               placeholder="Nhập số lượng.">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="form-group col-lg-12">
-                                                        <label for="description" class="col-form-label">Mô tả sản phẩm</label>
-                                                        <textarea id="description" name="description"
-                                                                  class="form-control"
-                                                                  rows="4"
-                                                                  placeholder="Nhập tên sản phẩm."></textarea>
+                                                               placeholder="End Quantity.">
                                                     </div>
                                                 </div>
 
@@ -100,8 +102,8 @@
                                                     <div>
                                                         <button id="btnCreate"
                                                                 type="button"
-                                                                class="btn btn-primary">
-                                                            <i class="ion ion-md-add"></i> Thêm mới
+                                                                class="btn btn-outline-dark">
+                                                            <i class="ion ion-md-add"></i> NEW ADD PRODUCT
                                                         </button>
                                                         <button type="reset" class="btn btn-secondary waves-effect waves-light">
                                                             Cancel
@@ -124,17 +126,17 @@
                                                             <i class="ion ion-md-cloud-upload"></i>
                                                         </div>
                                                         <div class="text">
-                                                            Chưa có tệp nào được chọn!
+                                                            No files have been selected yet!
                                                         </div>
                                                         <div class="text">
-                                                            Dung lượng tối đa = 2MB
+                                                            Maximum size = 2MB
                                                         </div>
                                                     </div>
                                                     <div class="clear-image-preview">
                                                         <i class="fas fa-times"></i>
                                                     </div>
                                                     <div class="file-name">
-                                                        Sửa ảnh
+                                                       CHANGER AVATAR
                                                     </div>
                                                 </div>
                                                 <input type="file" id="imageFile" accept="image/jpeg, image/png" hidden="">
@@ -146,18 +148,14 @@
                             </div>
                         </form>
                     </div>
-                    <!-- end container-fluid -->
-                    <!-- end container-fluid -->
                 </div>
-                <!-- end row -->
-            </div><!-- container-fluid -->
-        </div> <!-- Page content Wrapper -->
-    </div> <!-- content -->
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <!--<th:block th:replace="/layout/script :: script "/>-->
-
 <!-- jQuery  -->
 <th:block th:replace="/layoutProduct/script :: script"/>
 <script src="/assets/js/app.js"></script>
@@ -177,15 +175,7 @@
         },
         initializeEventControl: {}
     }
-    page.dialogs.elements.frmCreateProduct = $("#frmCreateProduct");
 
-    page.dialogs.elements.productName = $("#productName");
-    page.dialogs.elements.price = $("#price");
-    page.dialogs.elements.quantity = $("#quantity");
-    page.dialogs.elements.description = $("#description");
-
-    page.dialogs.elements.imageFile = $("#imageFile");
-    page.dialogs.elements.btnCreate = $("#btnCreate");
 
     page.dialogs.elements.wrapper = $("#frmCreateProduct section .wrappers");
     page.dialogs.elements.wrapperContent = $("#frmCreateProduct section .wrappers .content");
@@ -199,9 +189,79 @@
     page.dialogs.alertDanger.frmCreateProduct = $("#frmCreateProduct .frm-alert-danger");
 
     page.elements.loader = $(".loader");
+    page.dialogs.elements.frmCreateProduct = $("#frmCreateProduct");
+
+    page.dialogs.elements.imageFile = $("#imageFile");
+    page.dialogs.elements.btnCreate = $("#btnCreate");
+
+
+    page.dialogs.elements.productName = $("#productName");
+    page.dialogs.elements.price = $("#price");
+    page.dialogs.elements.quantity = $("#quantity");
+    page.dialogs.elements.description = $("#description");
+
+
 
     let productAvatar = new ProductAvatar();
     let product = new Product();
+
+
+    page.dialogs.commands.loadImageToCanvas = (imageFile) => {
+        page.dialogs.elements.imagePreview.css("display", "");
+        page.dialogs.elements.wrapper.addClass("active");
+        page.dialogs.elements.wrapperContent.css("opacity", 0);
+
+        let imageObj = new Image();
+
+        imageObj.onload = function () {
+            page.dialogs.elements.context.canvas.width = imageObj.width;
+            page.dialogs.elements.context.canvas.height = imageObj.height;
+            page.dialogs.elements.context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height);
+        };
+
+        imageObj.src = URL.createObjectURL(imageFile);
+    }
+
+    page.dialogs.commands.changeImagePreview = () => {
+        let imageFile = page.dialogs.elements.imageFile[0].files[0];
+
+        if (imageFile) {
+            let reader = new FileReader();
+
+            reader.readAsDataURL(imageFile);
+
+            reader.onload = function (e) {
+                if (e.target.readyState === FileReader.DONE) {
+                    page.dialogs.commands.loadImageToCanvas(imageFile);
+                }
+            }
+        } else {
+            page.dialogs.elements.clearImagePreview();
+        }
+    }
+
+    page.commands.loadData = () => {
+
+    }
+
+
+    page.commands.showLoading = () => {
+        page.elements.loader.removeClass("hide");
+        page.dialogs.elements.btnCreate.prop('disabled', true);
+    }
+
+    page.commands.closeLoading = () => {
+        page.elements.loader.addClass("hide");
+        page.dialogs.elements.btnCreate.prop('disabled', false);
+    }
+    page.dialogs.elements.clearImagePreview = () => {
+        page.dialogs.elements.imageFile.val("");
+        page.dialogs.elements.imagePreview.css("display", "none");
+        page.dialogs.elements.wrapper.removeClass("active");
+        page.dialogs.elements.wrapperContent.css("opacity", 1);
+    }
+
+
 
     page.dialogs.elements.frmCreateProduct.validate({
         rules: {
@@ -236,8 +296,8 @@
             },
             price: {
                 required: "Vui lòng nhập giá.",
-                min: "Giá sản phẩm tối thiểu là 100.000 VNĐ.",
-                max: "Giá sản phẩm tối đa là 999.999.999 VNĐ.",
+                min: "Giá sản phẩm tối thiểu là 100.000 $.",
+                max: "Giá sản phẩm tối đa là 999.999.999 $.",
                 number: "Giá sản phẩm phải là số."
             },
             quantity: {
@@ -324,60 +384,6 @@
             }).always(function () {
             page.commands.closeLoading();
         })
-    }
-    page.dialogs.commands.loadImageToCanvas = (imageFile) => {
-        page.dialogs.elements.imagePreview.css("display", "");
-        page.dialogs.elements.wrapper.addClass("active");
-        page.dialogs.elements.wrapperContent.css("opacity", 0);
-
-        let imageObj = new Image();
-
-        imageObj.onload = function () {
-            page.dialogs.elements.context.canvas.width = imageObj.width;
-            page.dialogs.elements.context.canvas.height = imageObj.height;
-            page.dialogs.elements.context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height);
-        };
-
-        imageObj.src = URL.createObjectURL(imageFile);
-    }
-
-    page.dialogs.commands.changeImagePreview = () => {
-        let imageFile = page.dialogs.elements.imageFile[0].files[0];
-
-        if (imageFile) {
-            let reader = new FileReader();
-
-            reader.readAsDataURL(imageFile);
-
-            reader.onload = function (e) {
-                if (e.target.readyState === FileReader.DONE) {
-                    page.dialogs.commands.loadImageToCanvas(imageFile);
-                }
-            }
-        } else {
-            page.dialogs.elements.clearImagePreview();
-        }
-    }
-
-    page.dialogs.elements.clearImagePreview = () => {
-        page.dialogs.elements.imageFile.val("");
-        page.dialogs.elements.imagePreview.css("display", "none");
-        page.dialogs.elements.wrapper.removeClass("active");
-        page.dialogs.elements.wrapperContent.css("opacity", 1);
-    }
-
-    page.commands.showLoading = () => {
-        page.elements.loader.removeClass("hide");
-        page.dialogs.elements.btnCreate.prop('disabled', true);
-    }
-
-    page.commands.closeLoading = () => {
-        page.elements.loader.addClass("hide");
-        page.dialogs.elements.btnCreate.prop('disabled', false);
-    }
-
-    page.commands.loadData = () => {
-
     }
 
     page.initializeEventControl = () => {

@@ -81,6 +81,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/roles",
                         "*"
                 ).permitAll()
+
                 .antMatchers("/resources/**", "/assets/**").permitAll()
                 .antMatchers("/resources/**", "/templates/**").permitAll()
                 .antMatchers(

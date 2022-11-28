@@ -1,6 +1,5 @@
 package com.codegym.controller;
 
-import com.codegym.service.product.IProductService;
 import com.codegym.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,7 +36,7 @@ public class ProductController {
     @GetMapping("/managerProduct/create")
     public ModelAndView showCreateForm() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("product/create");
+        modelAndView.setViewName("/product/createProduct");
         return modelAndView;
     }
 

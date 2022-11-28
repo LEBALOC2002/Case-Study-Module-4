@@ -62,6 +62,7 @@ public class ProductAPI {
 
 
     @PostMapping("/create")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public ResponseEntity<?> create(@Validated ProductCreateDTO productCreateDTO, BindingResult bindingResult) {
         new ProductCreateDTO().validate(productCreateDTO, bindingResult);
         MultipartFile imageFile = productCreateDTO.getFile();
