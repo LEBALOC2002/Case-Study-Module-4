@@ -21,6 +21,7 @@ public class UserDTO {
     @NotBlank(message = "Vui lòng nhập họ tên")
     @Size(min = 5, max = 50, message = "Họ tên có độ dài trong khoảng 5-50 ký tự")
     private String fullName;
+
     @NotBlank(message = "Vui lòng nhập email")
     @Email(message = "Email không đúng định dạng")
     @Size(min = 5, max = 50, message = "Độ dài email trong khoảng 5-50 ký tự")

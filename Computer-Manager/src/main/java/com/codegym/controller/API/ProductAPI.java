@@ -46,7 +46,7 @@ public class ProductAPI {
         try {
             pid = Long.parseLong(productId);
         } catch (NumberFormatException e) {
-            throw new DataInputException("ID sản phẩm  không hợp lệ ,vui lòng hãy nhập lại!");
+            throw new DataInputException("ID sản phẩm không hợp lệ ,vui lòng hãy nhập lại!");
         }
 
         Optional<Product> productOptional = productService.findById(pid);

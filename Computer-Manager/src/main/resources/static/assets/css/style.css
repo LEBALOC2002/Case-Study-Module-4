@@ -3144,7 +3144,16 @@ table.dataTable {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
+.frm-alert-danger {
+  padding: 10px 35px;
+  margin-bottom: 40px;
+  color: #fff;
+  background-color: #323539;
+  border-color: #2c3034;
+}
+.frm-alert-danger label {
+  display: list-item;
+}
 .select2-container-multi .select2-choices .select2-search-field input {
   padding: 7px 7px 7px 10px;
   font-family: inherit;
