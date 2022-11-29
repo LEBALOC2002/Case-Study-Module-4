@@ -313,20 +313,20 @@
                         App.IziToast.showSuccessAlertLeft("Chỉnh sửa sản phẩm <b>'" + product.productName + "'</b> thành công.")
                     }).fail((jqXHR) => {
                     let str = ``;
-                    console.log(jqXHR.status);
+                    console.log('jqXHR: ', jqXHR.responseJSON);
+
                     if (jqXHR.status === 401) {
                         App.SweetAlert.showError401();
                     } else {
                         if (jqXHR.status === 403) {
-
                             App.SweetAlert.showError403();
                         } else {
                             if (jqXHR.responseJSON) {
                                 if (jqXHR.responseJSON.message) {
-                                    str += `<label id="message-error" class="error" for="message">${jqXHR.responseJSON.message}</label>`;
+                                    str += `<label id="message-error" class="error" for="message">${jqXHR.responseJSON.description}</label>`;
                                 } else {
-                                    $.each(jqXHR.responseJSON, function (key, value) {
-                                        str += `<label id="${key}-error" class="error" for="${key}>${value}</label>`;
+                                    $.each(jqXHR.responseJSON, (key, value) => {
+                                        str += `<label id="${key}-error" class="error" for="${key}">${value}</label>`;
                                         $("#" + key).addClass("error");
                                     });
                                 }
