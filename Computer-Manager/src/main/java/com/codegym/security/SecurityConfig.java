@@ -36,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new JwtAuthenticationFilter();
     }
 
+
     @Bean(BeanIds.AUTHENTICATION_MANAGER)
     @Override
     public AuthenticationManager authenticationManager() throws Exception {
@@ -70,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().ignoringAntMatchers("/**").disable();
         http.httpBasic().authenticationEntryPoint(restServicesEntryPoint());
-
+        //phân quyền
         http.authorizeRequests()
                 .antMatchers("/",
                         "/api/auth/login",
@@ -81,7 +82,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/roles",
                         "*"
                 ).permitAll()
-
                 .antMatchers("/resources/**", "/assets/**").permitAll()
                 .antMatchers("/resources/**", "/templates/**").permitAll()
                 .antMatchers(

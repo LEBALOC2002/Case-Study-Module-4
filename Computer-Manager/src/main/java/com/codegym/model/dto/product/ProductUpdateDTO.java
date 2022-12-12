@@ -11,6 +11,7 @@ import org.springframework.validation.Validator;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
@@ -23,7 +24,11 @@ public class ProductUpdateDTO implements Validator {
     @NotEmpty(message = "Tên sản phẩm không được để trống , vui lòng nhập tên sản phẩm.")
     @Size(min = 5, max = 100, message = "Họ tên có độ dài từ khoảng 5 - 100 ký tự.")
     private String productName;
+
+    @NotEmpty(message = "Bạn không được để trống giá .")
     private String price;
+
+    @NotEmpty(message = "Bạn không được để trống số lượng .")
     private String quantity;
     @NotEmpty(message = "Vui lòng nhập mô tả sản phẩm  ,vui lòng nhập giá sản phẩm.")
     private String description;

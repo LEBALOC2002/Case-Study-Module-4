@@ -41,11 +41,10 @@ public class ProductController {
     }
 
 
-    @GetMapping("/managerProduct/Update")
-    public ModelAndView showEditForm() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("product/modalUpdateProduct");
-        return modelAndView;
-    }
-
+//    @GetMapping("/managerProduct/Update")
+//    public ModelAndView showEditForm() {
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("product/modalUpdateProduct");
+//        return modelAndView;
+//    }
 }

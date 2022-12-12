@@ -77,6 +77,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
+
+    // MÃ HÓA
     private void setAuthentication(HttpServletRequest request, String authorizationValue) {
         if (authorizationValue != null && jwtService.validateJwtToken(authorizationValue)) {
 

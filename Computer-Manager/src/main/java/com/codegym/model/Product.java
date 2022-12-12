@@ -30,6 +30,7 @@ public class Product extends BaseEntity{
 
     private String description;
 
+
     @OneToOne
     @JoinColumn(name = "product_avatar_id")
     private ProductAvatar productAvatar;

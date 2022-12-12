@@ -110,7 +110,6 @@ public class AuthAPI {
                     .build();
 
 //            System.out.println(jwtResponse);
-
             return ResponseEntity
                     .ok()
                     .header(HttpHeaders.SET_COOKIE, springCookie.toString())

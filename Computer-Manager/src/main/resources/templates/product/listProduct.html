@@ -190,10 +190,12 @@
             `;
             }
 
+
+
             page.commands.handleShowUpdateModal = () => {
                 $(".update").on("click", function () {
                     let id = $(this).data("id");
-                    let avatarFileFolder = $(this).data("avatar-file-folder");
+                    // let avatarFileFolder = $(this).data("avatar-file-folder");
                     let avatarFileName = $(this).data("avatar-file-name");
                     page.commands.getProductById(id).done((data) => {
 
@@ -302,7 +304,6 @@
                     .done((data) => {
                         product = data;
                         productAvatar = product.productAvatar;
-
                         let str = page.commands.renderProduct(product, productAvatar);
                         let updateRow = $("#tr_" + product.id);
                         updateRow.replaceWith(str);
